@@ -1,0 +1,428 @@
+%%%
+%%% ------------------------------------------------------------------------
+%%% Requirements (should be included in a modern tex distribution):
+%%% Requirements that are included in a modern tex distribution:
+%%% ------------------------------------------------------------------------
+%%% xelatex
+%%% fontspec.sty
+%%% hyperrref.sty
+%%% xunicode.sty
+%%% color.sty
+%%% url.sty
+%%% fancyhdr.sty
+%%% memoir.cls
+%%% fontawesome.sty
+%%%
+%%% 
+%%% 
+%%% ------------------------------------------------------------------------
+%%% Requirements from https://github.com/kjhealy/latex-custom-kjh
+%%% ------------------------------------------------------------------------
+%%% org-preamble-xelatex.sty
+%%% memoir-article-styles.sty
+%%%
+%%% ------------------------------------------------------------------------
+%%% Optional
+%%% ------------------------------------------------------------------------
+%%% git
+%%% vc.sty
+%%% revnum.sty
+%%% Fonts
+%%%
+%%% ------------------------------------------------------------------------
+%%% Note
+%%%------------------------------------------------------------------------
+%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% \bigskip and \newpage commands here and there, which are used to balance
+%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% remove these as needed.
+%%%------------------------------------------------------------------------
+
+%
+\documentclass[10pt]{article}   
+\usepackage[top=1in, bottom=1in, left=1in, right=2.25in]{geometry}
+
+%%%------------------------------------------------------------------------
+%%% Metadata
+%%%------------------------------------------------------------------------
+
+%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% used below in the hyperref declaration and address banner section.
+
+\def\myauthor{Omar Lizardo}
+\def\mytitle{Vita}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mysubtitle{}
+\def\myaffiliation{University of California, Los Angeles}
+\def\myaddress{375 Portola Plaza, 264 Haines Hall, Los Angeles, CA, 90095}
+\def\myemail{olizardo@soc.ucla.edu}
+\def\myweb{http://olizardo.bol.ucla.edu}
+\def\myphone{310-267-5438}
+\def\myfax{}
+\def\mytwitter{}
+\def\myversion{}
+\def\myrevision{}
+
+\def\myaffiliation{University of California, Los Angeles}
+\def\myauthor{Omar Lizardo}
+\date{} % not used (revision control instead)
+\def\mykeywords{Omar, Lizardo, Omar Lizardo, Vita, CV, Resume, Sociology}
+
+%%%------------------------------------------------------------------------  
+%%% Git version tracking 
+%%%------------------------------------------------------------------------
+
+%% If you don't use git or the vc package (from CTAN), comment this out.
+%% If you comment it out, be sure to remove the \rfoot comment below, too.
+%% \input{vc}
+
+%%%------------------------------------------------------------------------
+%%% Required style files
+%%%------------------------------------------------------------------------
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{revnum}
+\usepackage{multicol}
+        \setlength{\multicolsep}{6.0pt plus 2.0pt minus 1.5pt}% 50% of original values
+\usepackage[TU]{fontenc}    
+\usepackage{xunicode}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{./academicons}
+\usepackage{fontspec}
+\usepackage{noto}
+\usepackage[usenames,dvipsnames]{xcolor}
+%% hyperlinks
+\usepackage[final, xetex, colorlinks=true, urlcolor=ucladark]{hyperref}
+
+
+%%%------------------------------------------------------------------------
+%%% Document
+%%%------------------------------------------------------------------------
+
+\begin{document}
+%% Custom Colors
+\definecolor{ucladark}{HTML}{003B5C}
+\definecolor{uclablue}{HTML}{005587}
+\definecolor{uclagold}{HTML}{FFB81C}
+\definecolor{uclamagenta}{HTML}{FF00A5}
+
+%% Setting up fonts
+\setromanfont[Scale = 1.05]{Latin Modern Roman}
+\setsansfont[Color = ucladark, Scale = 1.5]{Roboto Light}
+%\setmonofont[Color = uclablue, Scale = 0.65]{iosevka-medium.ttf}
+%% Choose fonts for use with xelatex
+%% Minion and Myriad are widely available, from Adobe. 
+%% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
+%% and is worth every penny. Any good monospace font will work fine, though.
+%% Consolas or inconsolata are good alternatives.
+
+
+
+%%%------------------------------------------------------------------------
+%%% Local commands
+%%%------------------------------------------------------------------------
+
+%% Marginal header
+%% Note: as the document goes on you may need to introduce a (gradually increasing)
+%% \vspace element to keep the marginal header pleasingly aligned with the first 
+%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
+%% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
+
+\newcommand{\marginhead}[1]{\marginpar{\textsf{{\vspace{1.3em}\flushright #1}}\doublespacing}}
+\marginparwidth = 150pt
+\oddsidemargin = 100pt
+\marginparsep = 0pt
+
+%% custom ampersand (font consistent with the one chosen above)
+%\newcommand{\amper}{{\fontspec[Colour=000066]{Corbel}\selectfont\&\,}}
+
+%% No bullets on labels
+\renewcommand{\labelitemi}{~} 
+
+%% Custom hanging indent for vita items
+\def\ind{\hangindent=0.75 true cm\hangafter=1 \noindent}
+\def\noind{\hangindent=0 true cm\hangafter=1 \noindent}
+
+%\def\ind{\hangindent=18pt\hangafter=1 \noindent}
+\def\labelitemi{~}
+\renewcommand{\labelitemii}{~}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\renewcommand{\labelenumi}{\S\theenumi.}
+
+
+
+%%%------------------------------------------------------------------------
+%%% Page layout
+%%%------------------------------------------------------------------------
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{Last updated: \today}
+%\chead{-\thepage-OL}
+
+%% git revision control footer 
+%% \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
+%%%------------------------------------------------------------------------
+%%% Address and contact block
+%%%------------------------------------------------------------------------
+\begin{minipage}[t]{3in}
+    \small
+    \faUniversity \, \href{https://soc.ucla.edu}{Department of Sociology}, \href{https://ucla.edu}{UCLA} \\
+    \faLocationArrow \, \href{https://goo.gl/maps/Ge1pAsh17ANWcdRB7}{264 Haines Hall, Los Angeles, CA, 90095} \\
+    \faPhone \, \myphone  \\ 
+    \faEnvelope \, \href{mailto:\myemail}{\myemail} \\
+    \faGlobe \, \href{\myweb}{olizardo.bol.ucla.edu} \\
+    %\faTwitter \, \href{https://twitter.com/omar_lizardo}{@omar\_lizardo}
+    \aiOrcid \, \href{https://orcid.org/0000-0002-5405-3007}{0000-0002-5405-3007} \\
+\end{minipage}
+\hfill     
+%\begin{minipage}[t]{0.0in}
+% dummy (needed here)
+%\end{minipage}
+\hfill
+\begin{minipage}[t]{3in}
+    \flushleft
+    \small 
+    \aiGoogleScholar \,  \href{https://scholar.google.com/citations?user=Lt5nMNkAAAAJ&hl=en}{Google Scholar} \\
+    \aiSemanticScholar \, \href{https://www.semanticscholar.org/author/Omar-Lizardo/2632398}{Semantic Scholar} \\
+    \aiPublons \, \href{https://publons.com/researcher/1372654/omar-lizardo}{Publons} \\
+    \aiElsevier \, \href{https://www.scopus.com/authid/detail.uri?authorId=6508228764}{Scopus} \\
+    \aiPhilPapers \, \href{https://philpeople.org/profiles/omar-lizardo}{PhilPapers} \\
+    \aiAcademia \, \href{https://ucla.academia.edu/OmarLizardo}{Academia}
+    \
+\end{minipage}
+\bigskip
+\bigskip
+
+%% Name 
+\newcommand{\myname}{\fontspec[Colour=ucladark, Scale = 3]{Roboto Thin} \noindent}
+\begin{center}
+    {\myname  Omar Lizardo}
+\end{center}
+
+\reversemarginpar
+\bigskip
+\bigskip
+%% Education
+\marginhead{{\vskip -1.2em}Education}
+\noindent\emph{University of Arizona (Tucson, AZ) \vspace{0.01in}}
+
+\ind {\bf PhD, Sociology}, 2006. 
+
+\ind {\bf MA, Sociology}, 2002.
+
+\medskip
+\noindent\emph{Brooklyn College, City University of New York (Brooklyn, NY) \vspace{0.02in}}
+
+\ind {\bf BS, Psychology}, 1997.
+
+%% Appointments
+\bigskip
+\marginhead{{\vskip -1.2em} Academic \newline Positions}
+\input{01-positions}
+
+\newpage
+%% Memberships
+\marginhead{{\vskip -1.2em}Professional \newline Memberships}
+\input{03-memberships}
+\medskip
+%%Awards
+\marginhead{{\vskip -1.2em} Distinctions, \newline Honors, \newline and Awards}
+\input{02-awards}
+%% Publications
+%% Use revnumerate environment if numbered publications are needed. 
+%% (Include it above in the preamble).
+%% \renewcommand{\labelenumi}{\emph{a}\theenumi.}
+%% \begin{revnumerate}
+\newpage
+\marginhead{{\vskip -1.2em}Books}
+\input{04-books}
+\bigskip
+\marginhead{{\vskip -1.2em}Peer-Reviewed \newline Articles}
+\input{05-2023}
+\medskip
+\marginhead{{\vskip -1.2em}2022}
+\input{05-2022}
+\newpage
+\marginhead{{\vskip -1.2em}2021}
+\input{05-2021}
+\medskip
+\marginhead{{\vskip -1.2em} 2020}
+\input{05-2020}
+\newpage
+\marginhead{{\vskip -1.2em} 2019}
+\input{05-2019}
+\medskip
+\marginhead{{\vskip -1.2em}2018}
+\input{05-2018}
+\newpage
+\marginhead{{\vskip -1.2em}2017}
+\input{05-2017}
+\medskip
+\marginhead{{\vskip -1.2em}2016}
+\input{05-2016}
+\medskip
+\marginhead{{\vskip -1.2em}2015}
+\input{05-2015}
+\medskip
+\marginhead{{\vskip -1.2em}2014}
+\input{05-2014}
+\medskip
+\marginhead{{\vskip -1.2em}2013}
+\input{05-2013}
+\medskip
+\marginhead{{\vskip -1.2em}2011-2012}
+\input{05-2012}
+\input{05-2011}
+\newpage
+\marginhead{{\vskip -1.2em}2010}
+\input{05-2010}
+\medskip
+\marginhead{{\vskip -1.2em}2009}
+\input{05-2009}
+\medskip
+\marginhead{{\vskip -1.2em}2008}
+\input{05-2008}
+\medskip
+\marginhead{{\vskip -1.2em}2006-2007}
+\input{05-2007}
+\input{05-2006}
+\medskip
+\marginhead{{\vskip -1.2em}2003-2005}
+\input{05-2003-2005}
+\medskip
+\marginhead{{\vskip -1.2em} Book \newline Chapters}
+\input{06-chapters-2021-2030.tex}
+\medskip
+\marginhead{{\vskip -1.2em}2016-2020}
+\input{06-chapters-2016-2020.tex}
+\newpage
+\marginhead{{\vskip -1.2em}2002-2015}
+\input{06-chapters-2002-2015.tex}
+\medskip
+\marginhead{{\vskip -1.2em} Comments \& \newline Short Pieces}
+\input{07-comments-2016-present}
+\medskip
+\marginhead{{\vskip -1.2em} 2011-2014}
+\input{07-comments-2011-2014}
+\medskip
+\marginhead{{\vskip -1.2em} 2008-2010}
+\input{07-comments-2008-2010}
+\medskip
+\marginhead{{\vskip -1.2em} Encyclopedia \newline Entries}
+\input{08-encyclopedia}
+
+\bigskip
+\marginhead{{\vskip -1.2em} Book \newline Reviews}
+\input{09a-reviews-2020-present}
+\medskip
+\marginhead{{\vskip -1.2em}2011-2019}
+\input{09b-reviews-2011-2019}
+\medskip
+\marginhead{{\vskip -1.2em}2003-2010}
+\input{09c-reviews-2003-2010}
+
+\bigskip
+\marginhead{{\vskip -1.2em} Archived \newline Unpublished \newline Preprints}
+\input{10-preprints}
+
+\medskip
+%\renewcommand{\labelenumi}{\emph{r}\theenumi.}
+%\begin{revnumerate}
+% %\end{revnumerate}
+\marginhead{{\vskip -1.2em}Invited \newline Lectures \newline and \newline Addresses}
+\input{11-lec-2018-present}
+\medskip
+\marginhead{{\vskip -1.2em}2015-2017}
+\input{11-lec-2015-2017}
+\medskip
+\marginhead{{\vskip -1.2em}2010-2014}
+\input{11-lec-2010-2014}
+\medskip
+\marginhead{{\vskip -1.2em}2004-2009}
+\input{11-lec-2004-2009}
+
+\bigskip
+\marginhead{{\vskip -1.2em} Grants and \newline Sponsored \newline Programs}
+\input{13-grants}
+\newpage
+\marginhead{{\vskip -1.75em}Student \newline Advising}
+
+\noindent \textbf{Doctoral Dissertations Directed }
+
+\input{15-phd}
+
+\noindent \textbf{Master's Theses Directed}
+
+\input{14-ma}
+
+\medskip
+\noindent \textbf{Undergraduate Honor Thesis Adviser} \\\input{27-students}
+
+\bigskip
+\marginhead{{\vskip -1.2em} Conference \newline
+Presentations}
+\input{17-conf-2020-present}
+\medskip
+\marginhead{{\vskip -1.2em}2018-2019}
+\input{17-conf-2018-2019}
+\medskip
+\marginhead{{\vskip -1.2em}2016-2017}
+\input{17-conf-2016-2017}
+\medskip
+\marginhead{{\vskip -1.2em}2010-2015}
+\input{17-conf-2010-2015}
+\medskip
+\marginhead{{\vskip -1.2em} 2006-2009}
+\input{17-conf-2006-2009}
+\medskip
+\marginhead{{\vskip -1.2em} 2000-2005}
+\input{17-conf-2002-2005}
+
+\bigskip
+\marginhead{{\vskip -1.2em} Editorial \newline Work}
+
+\input{18-editor}
+
+\noindent\textbf{Editorial Advisory Board Member} 
+
+\input{19-edboard}
+\input{20-prog-comm}
+
+\newpage
+\marginhead{{\vskip -1.6em} Other \newline Professional \newline Service}
+
+\noindent{\bf Committee Member}
+
+\input{21-asa-committee}
+
+\medskip
+\noindent{\bf Elected Officer} 
+
+\input{22-asa-officer}
+
+\medskip
+\noindent{\bf Discussant}
+
+\input{23-discussant}
+
+\medskip
+\noindent{\bf Presider}
+
+\input{24-presider}
+
+\medskip
+\noindent{\bf Organizer}
+
+\input{25-organizer}
+
+\bigskip
+\marginhead{{\vskip -1.2em} Courses \newline Taught}  
+
+\input{28-courses}
+
+\end{document}
