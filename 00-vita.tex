@@ -80,19 +80,13 @@
 %%%------------------------------------------------------------------------
 %%% Required style files
 %%%------------------------------------------------------------------------
-\usepackage{parskip}
 \usepackage{fancyhdr}
+\usepackage{parskip}
 \usepackage{setspace}
-\usepackage{revnum}
 \usepackage{multicol}
         \setlength{\multicolsep}{6.0pt plus 2.0pt minus 1.5pt}% 50% of original values
-\usepackage[TU]{fontenc}    
-\usepackage{xunicode}
 \usepackage{enumitem}
 \usepackage{fontawesome}
-\usepackage{academicons}
-\usepackage{fontspec}
-\usepackage{noto}
 \usepackage[usenames,dvipsnames]{xcolor}
 %% hyperlinks
 \usepackage[final, xetex, colorlinks=true, urlcolor=ucladark]{hyperref}
@@ -187,7 +181,7 @@
     \small 
     \href{https://scholar.google.com/citations?user=Lt5nMNkAAAAJ&hl=en}{Google Scholar} \\
     \href{https://www.semanticscholar.org/author/Omar-Lizardo/2632398}{Semantic Scholar} \\
-    \href{https://publons.com/researcher/1372654/omar-lizardo}{Publons} \\
+    \href{https://www.webofscience.com/wos/author/record/477048}{Clarivate (WoS)} \\
     \href{https://www.scopus.com/authid/detail.uri?authorId=6508228764}{Scopus} \\
     \href{https://philpeople.org/profiles/omar-lizardo}{PhilPapers} \\
     \href{https://orcid.org/0000-0002-5405-3007}{ORCID: 0000-0002-5405-3007} \\
@@ -254,13 +248,13 @@
 \medskip
 \marginhead{{\vskip -1.2em} 2020}
 \input{05-2020}
-\newpage
+\medskip
 \marginhead{{\vskip -1.2em} 2019}
 \input{05-2019}
 \medskip
 \marginhead{{\vskip -1.2em}2018}
 \input{05-2018}
-\newpage
+\medskip
 \marginhead{{\vskip -1.2em}2017}
 \input{05-2017}
 \medskip
@@ -285,7 +279,7 @@
 \medskip
 \marginhead{{\vskip -1.2em}2009}
 \input{05-2009}
-\medskip
+\newpage
 \marginhead{{\vskip -1.2em}2008}
 \input{05-2008}
 \medskip
@@ -295,16 +289,16 @@
 \medskip
 \marginhead{{\vskip -1.2em}2003-2005}
 \input{05-2003-2005}
-\medskip
+\bigskip
 \marginhead{{\vskip -1.2em} Book \newline Chapters}
 \input{06-chapters-2021-2030.tex}
 \medskip
 \marginhead{{\vskip -1.2em}2016-2020}
 \input{06-chapters-2016-2020.tex}
-\newpage
+\medskip
 \marginhead{{\vskip -1.2em}2002-2015}
 \input{06-chapters-2002-2015.tex}
-\medskip
+\newpage
 \marginhead{{\vskip -1.2em} Comments \& \newline Short Pieces}
 \input{07-comments-2016-present}
 \medskip
@@ -325,11 +319,11 @@
 \medskip
 \marginhead{{\vskip -1.2em}2003-2010}
 \input{09c-reviews-2003-2010}
-\bigskip
+\medskip
 \marginhead{{\vskip -1.2em} arXiv e-prints}
 \input{10-1-arxiv}
 
-\medskip
+\newpage
 %\renewcommand{\labelenumi}{\emph{r}\theenumi.}
 %\begin{revnumerate}
 % %\end{revnumerate}
@@ -344,14 +338,9 @@
 \medskip
 \marginhead{{\vskip -1.2em}2004-2009}
 \input{11-lec-2004-2009}
-\bigskip
+\newpage
 \marginhead{{\vskip -1.2em} Grants and \newline Sponsored \newline Programs}
     \input{13-grants}
-\medskip
-\marginhead{{\vskip -1.75em}Student \newline Advising}
-    \input{14a-phd}
-    \input{14b-ma}
-    \input{15-ug}
 \medskip
 \marginhead{{\vskip -1.2em} Conference \newline
 Presentations}
@@ -369,7 +358,7 @@ Presentations}
 \marginhead{{\vskip -1.2em} 2006-2009}
 \input{17-conf-2006-2009}
 \medskip
-\marginhead{{\vskip -1.2em} 2000-2005}
+\marginhead{{\vskip -1.3em} 2000-2005}
 \input{17-conf-2002-2005}
 
 \bigskip
@@ -377,7 +366,7 @@ Presentations}
     \input{18-editor}
     \input{19-edboard}
     \input{20-prog-comm}
-
+\newpage
 \marginhead{{\vskip -1.2em} Other \newline Professional \newline Service}
     \input{21-asa-committee}
     \medskip
@@ -388,7 +377,13 @@ Presentations}
     \input{24-presider}
     \medskip
     \input{25-organizer}
+\newpage
+\marginhead{{\vskip -1.75em}Student \newline Advising}
+    \input{14a-phd}
+    \input{14b-ma}
+    \input{15-ug}
 \medskip
+
 \marginhead{{\vskip -1.2em} Courses \newline Taught}  
     \input{28-courses}
 
